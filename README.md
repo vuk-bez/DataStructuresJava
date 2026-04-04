@@ -22,7 +22,7 @@ Zadaci su organizovani prema tipovima struktura podataka i služe za vježbu i b
   - svaki *package* predstavlja skup zadataka iz određene strukture podataka  
 - U svakom kodu je prije funkcije/metode jasno naznačeno na koji zadatak se rješenje odnosi (komentarom)
 
---
+---
 ## Materijali
 
 Folder **`#Materijal`** sadrži:
