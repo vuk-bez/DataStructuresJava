@@ -30,11 +30,8 @@ Folder **`#Materijal`** sadrži:
 - tekstove svih zadataka  
 - dodatne dokumente vezane za vježbe  
 
+---
 ## Napomena
 
 Moguće je da se u nekim rješenjima nalaze greške.  
 Repozitorijum je namijenjen prvenstveno kao pomoć pri učenju, pa se preporučuje dodatna provjera i testiranje implementacija.
-
----
-
-Repozitorij je koristan studentima i svima koji žele unaprijediti svoje znanje iz struktura podataka u Java jeziku kroz praktične primjere.
