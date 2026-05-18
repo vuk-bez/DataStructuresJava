@@ -4,6 +4,7 @@ import Stack.Sekvencijalan.StackSekvencijalan;
 import Stack.Ulancan.StackUlancan;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
     public static Scanner ulaz = new Scanner(System.in);
@@ -172,10 +173,61 @@ public class Main {
         }
     }
 
+    public static void InfixToPostfix() {
+        String s = ulaz.nextLine();
+        String rez = "";
+        Stack<Character> stack = new Stack<>();
+        int broj = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+                int cifra = s.charAt(i) - '0';
+                if (!(s.charAt(i+1) >= '0' && s.charAt(i+1) <= '9') && i != (s.length() - 1)) {
+                    broj = broj*10 + cifra;
+                    rez += String.valueOf(broj);
+                    rez += " ";
+                    broj = 0;
+                } else {
+                    broj = broj*10 + cifra;
+                }
+            }
+            if(s.charAt(i) == '+' || s.charAt(i) == '-') {
+                if (!stack.isEmpty() && (stack.peek() == '+' || stack.peek() == '-')) {
+                    rez += stack.pop();
+                    rez += " ";
+                }
+                stack.push(s.charAt(i));
+            }
+            if(s.charAt(i) == '*' || s.charAt(i) == '/') {
+                if (!stack.isEmpty() && (stack.peek() == '*' || stack.peek() == '/')) {
+                    rez += stack.pop();
+                    rez += " ";
+                }
+                stack.push(s.charAt(i));
+            }
+            if(s.charAt(i) == '(') {
+                stack.push('(');
+            }
+            if(s.charAt(i) == ')') {
+                while(stack.peek() != '(') {
+                    rez += stack.pop();
+                    rez += " ";
+                }
+                stack.pop();
+            }
+        }
+        while(!stack.isEmpty()) {
+            rez += stack.pop();
+            rez += " ";
+        }
+
+        System.out.println(rez);
+    }
+
     public static void main(String[] args) {
         //zad1();
         //zad2();
         //zad3();
-        System.out.println(zad4());
+        //System.out.println(zad4());
+        //InfixToPostfix();
     }
 }
